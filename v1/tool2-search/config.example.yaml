@@ -1,0 +1,15 @@
+# 工具2 配置模板 (smsearch)
+# 用法: 复制为 config.yaml 后填入自己的 key (config.yaml 已被 .gitignore 排除)
+deepseek:
+  api_key: ""            # 到 https://platform.deepseek.com 申请
+  model: deepseek-chat
+  base_url: https://api.deepseek.com
+
+semantic:
+  batch_size: 10        # 每批 LLM 判定条数
+  max_llm_calls: 50     # 关键词模式: LLM 调用预算上限 (防失控)
+  max_llm_calls_did: 1000  # 抖音号模式: 全量翻页, 预算放宽 (大账号可能上千条)
+
+search:
+  max_scrolls: 5        # 每关键词最多滚动次数
+  keyword_cooldown: [6, 10]   # 关键词间冷却秒数

@@ -1,0 +1,34 @@
+# smfetch 配置模板
+# 用法: 复制为 config.yaml 后填入自己的 key/路径 (config.yaml 已被 .gitignore 排除)
+platform: douyin
+profile_dir: ../../.profile      # 登录态(小号), 相对本文件所在目录
+output_dir: data
+
+pacing:                         # 安全节奏 (防封)
+  scroll_wait: [6, 12]
+  pause_every: 5
+  pause_long: [15, 25]
+  max_scrolls: 250              # 会话轮次预算: 保证 max_comments 上限生效
+  max_comments: 2000            # 单次评论+回复上限
+  stall_limit: 5
+
+safety:
+  max_per_day: 200              # 单日限额
+  read_only: true               # 硬约束: 只读
+
+asr:
+  model: medium
+  device: cpu
+  local_model: ../../.cache/hf-local/faster-whisper-medium   # 离线模型(可选)
+
+deepseek:                 # 字幕 LLM 修正 (可选; 无 key 则跳过修正只留原始字幕)
+  api_key: ""             # 到 https://platform.deepseek.com 申请
+  model: deepseek-chat
+  base_url: https://api.deepseek.com
+
+notify:                   # 批量采集的进度通知 (可选)
+  channel: null           # null / serverchan / wecom
+  serverchan:
+    sendkey: ""           # https://sct.ftqq.com 申请
+  wecom:
+    webhook: ""

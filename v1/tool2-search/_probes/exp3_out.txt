@@ -1,0 +1,59 @@
+﻿
+===== A. 点击'日期筛选' → 观察面板 =====
+  异常: Page.evaluate: TypeError: el.click is not a function
+    at eval (eval at evaluate (:311:30), <anonymous>:1:12)
+    at UtilityScript.evaluate (<anonymous>:318:18)
+    at UtilityScript.<anonymous> (<an
+
+===== B. 监听作品列表接口 + 滚动一次 =====
+  /aweme/v1/web/aweme/post/
+    params: {"aid": "6383", "sec_user_id": "MS4wLjABAAAAzV1wNMOd-askb-PxHj8I8lWfvXMgy8MFgLy3g7mLuiM", "max_cursor": "1785552257000", "count": "18"}
+  /aweme/v1/web/aweme/post/
+    params: {"aid": "6383", "sec_user_id": "MS4wLjABAAAAzV1wNMOd-askb-PxHj8I8lWfvXMgy8MFgLy3g7mLuiM", "max_cursor": "1783835815000", "count": "18"}
+
+===== C. window 全局初始数据 =====
+D:\zhy\抖音\.venv\Scripts\python.exe : Traceback (most recent call last):
+所在位置 行:1 字符: 291
++ ... NG='utf-8'; D:\zhy\抖音\.venv\Scripts\python.exe _probes\exp3_user_page ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "D:\zhy\抖音\v1\tool2-search\_probes\exp3_user_page_api.py", line 129, in <module>
+    main()
+    ~~~~^^
+  File "D:\zhy\抖音\v1\tool2-search\_probes\exp3_user_page_api.py", line 97, in main
+    globs = page.evaluate("""() => {
+        const out = {};
+    ...<9 lines>...
+        return out;
+    }""")
+  File "D:\zhy\抖音\.venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9385, in evaluate
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.evaluate(expression=expression, arg=mapping.to_impl(arg))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\zhy\抖音\.venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "D:\zhy\抖音\.venv\Lib\site-packages\playwright\_impl\_page.py", line 472, in evaluate
+    return await self._main_frame.evaluate(expression, arg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\zhy\抖音\.venv\Lib\site-packages\playwright\_impl\_frame.py", line 345, in evaluate
+    await self._channel.send(
+    ...<6 lines>...
+    )
+  File "D:\zhy\抖音\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\zhy\抖音\.venv\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.evaluate: TypeError: Cannot read properties of undefined (reading 'length')
+    at eval (eval at evaluate (:311:30), <anonymous>:9:43)
+    at UtilityScript.evaluate (<anonymous>:318:18)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)

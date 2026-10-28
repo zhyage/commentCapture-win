@@ -1,0 +1,46 @@
+# ============================================================
+# smanalyze 分析需求模板 (工具3)
+# 用法: python -m smanalyze plan request.yaml   # 先看四态判定
+#       python -m smanalyze run  request.yaml   # 执行并输出变量表
+# ============================================================
+
+# 数据目录 (工具1 的产出)
+data_dir: ../tool1-collect/data/douyin
+
+# 需求指标 (可用 metric_id 或中文名; 完整清单见: smanalyze metrics)
+metrics:
+  # --- 视频层 · 互动 ---
+  - likes
+  - comments_n
+  - engage_ratio
+  # --- 视频层 · 官方互动(核心) ---
+  - reply_rate
+  - reply_speed_p50_min
+  - reply_speed_p90_min
+  - reply_text_len_avg
+  - reply_emoji_rate
+  # --- 视频层 · 评论群体 ---
+  - comment_len_avg
+  - comment_question_rate
+  - ip_region_entropy
+  - comment_velocity_24h
+  # --- 视频层 · 覆盖(可信度) ---
+  - comment_coverage
+  # --- 不可得示例(会被判为 ❌/🔶) ---
+  - 播放量
+  - 作品数
+
+# 标注任务 (v0.2, 当前未实现 → 判为 🔶需补采)
+tasks:
+  - willingness_level
+  - video_category
+
+# 抽样策略 (显式; all = 全量)
+sample: all
+sample_n: 0
+
+# 是否输出评论层变量表
+include_comments: true
+
+# 输出目录
+output_dir: ./output

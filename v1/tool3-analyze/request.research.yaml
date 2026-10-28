@@ -1,0 +1,93 @@
+# ============================================================
+# request.research.yaml — 研究变量需求 (idea.md 映射, 本轮: 补齐现有 23 条)
+# 用法:
+#   python -m smanalyze plan  request.research.yaml   # 四态判定(先看这个)
+#   python -m smanalyze run   request.research.yaml   # 统计引擎 → 变量表
+#   python -m smanalyze label request.research.yaml --dry-run
+#   python -m smanalyze label request.research.yaml
+# ============================================================
+
+# 数据目录 (工具1 的产出)
+data_dir: ../tool1-collect/data/douyin
+
+# 需求指标 (metric_id 或中文名; 完整清单见 smanalyze metrics)
+metrics:
+  # ---------- 自变量 OTAHI ① Text Liveness (词典密度, 双通道) ----------
+  - tl_index_cap              # 等权指数(仅文案)
+  - tl_index_all              # 等权指数(文案+字幕)
+  - tl_cap_first_person
+  - tl_cap_colloquial
+  - tl_cap_emotion
+  - tl_cap_slang
+  - tl_cap_meme
+  - tl_cap_rhetorical
+  - tl_all_first_person
+  - tl_all_colloquial
+  - tl_all_emotion
+  - tl_all_slang
+  - tl_all_meme
+  - tl_all_rhetorical
+  # ---------- 自变量 OTAHI ② Visual Liveness ----------
+  - visual_present_ratio      # 真人出镜比例
+  - face_count_avg            # 平均人脸数
+  - face_count_max
+  - selfie_score              # 自拍/手持特征
+  - shake_index
+  - camera_motion             # 镜头运动类型
+  # ---------- 自变量 OTAHI ③ Interaction Liveness ----------
+  - reply_rate                # 官方回复率
+  - reply_speed_p50_min       # 回复速度
+  - reply_speed_p90_min
+  - reply_text_len_avg        # 回复字数
+  - reply_emoji_rate          # 是否使用表情
+  - reply_at_rate             # 是否直接互动
+  # ---------- 因变量 ETI ----------
+  - willingness_level
+  - etir                      # 表达性旅游意愿率(≥1)
+  - strong_etir               # 强意愿率(≥3)
+  - eti_mean                  # 平均意愿强度
+  # ---------- 控制变量 ----------
+  - duration_sec
+  - likes
+  - comments_n
+  - shares
+  - collects
+  - publish_date
+  - publish_weekday
+  - publish_hour
+  - is_holiday                # 是否节假日(国务院口径)
+  - holiday_name
+  - is_weekend
+  - is_makeup_workday
+  - video_category            # 视频类别(11 类)
+  - video_resolution
+  - followers
+  - is_verified
+  # ---------- 可信度 (必须随表交付) ----------
+  - comment_coverage
+  - comments_collected
+  - comments_platform_total
+  # ---------- 已知不可得 (会被判为 ❌) ----------
+  - 播放量
+  - 距离目的地
+  - 方言识别
+  - 音乐信息
+
+# 标注任务 (仅新任务; willingness_level / video_category 已跑过, 有缓存)
+tasks:
+  - tl_llm_first_person
+  - tl_llm_colloquial
+  - tl_llm_emotion
+  - tl_llm_slang
+  - tl_llm_meme
+  - tl_llm_rhetorical
+
+# 抽样策略 (显式; all = 全量)
+sample: all
+sample_n: 0
+
+# 是否输出评论层变量表 (ETI 派生需要)
+include_comments: true
+
+# 输出目录
+output_dir: ./output

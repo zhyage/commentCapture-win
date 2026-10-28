@@ -1,0 +1,12 @@
+﻿
+===== 标准搜索页 type=user =====
+  URL: https://www.douyin.com/search/55008743593?type=user
+  title: 发现更多精彩视频 - 抖音搜索
+  登录墙: False
+  用户卡片: [{'digits': '55008743593388', 'nick': '红河文旅认证徽章红河哈尼族彝族自治州文化', 'visible': True}, {'digits': 't72288359379', 'nick': 't722883593关注抖音号: t72', 'visible': True}, {'digits': '366595237931', 'nick': '用户6693064093593关注抖音号', 'visible': True}, {'digits': '76025973593930', 'nick': '76025973593关注抖音号: 76', 'visible': True}, {'digits': '348463935934', 'nick': '34846393593关注抖音号: 34', 'visible': True}, {'digits': '58627203593414', 'nick': '58627203593关注抖音号: 58', 'visible': True}]
+
+===== 标准搜索页 type=general =====
+  URL: https://www.douyin.com/search/55008743593?type=general
+  title: 发现更多精彩视频 - 抖音搜索
+  登录墙: False
+  用户卡片: []

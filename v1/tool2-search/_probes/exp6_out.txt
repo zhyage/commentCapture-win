@@ -1,0 +1,33 @@
+﻿>> 当前 URL: https://www.douyin.com/user/MS4wLjABAAAAzV1wNMOd-askb-PxHj8I8lWfvXMgy8MFgLy3g7mLuiM/search/55008743593?type=user
+>> 回首页 ...
+>> 搜索框输入抖音号: 55008743593
+>> 当前 URL: https://www.douyin.com/jingxuan/search/55008743593?aid=c885f96e-7612-4d22-8fb1-fe9f99275868&enter_from=discover&source=normal_search
+>> 尝试点击 tab「用户」...
+>> 已点击'用户' tab
+
+===== A. 拦截到的搜索接口响应 =====
+  /aweme/v1/web/search/sug/
+
+===== B. 页面可见用户卡片 =====
+   {"href": "//www.douyin.com/user/self", "cls": "RZuwF26I zzGiSA_5", "text": ""}
+   {"href": "//www.douyin.com/user/self?enter_from=search_result&enter_method=personal_panel&from_tab_name=main", "cls": "RZuwF26I rTI4qROU", "text": "lw"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAAzV1wNMOd-askb-PxHj8I8lWfvXMgy8MFgLy3g7mLuiM?enter_from=search_resu", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "红河文旅认证徽章红河哈尼族彝族自治州文化和旅游局官方抖音号关注抖音号: 55008743593388.3万获赞15.1万"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAAjJONiRebSN0Dw3Rg9dXiNgwavnBJaphsNOmo6ZTHJT0yjNdLPvOa7QBsY7Dj9bHH?e", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "t722883593关注抖音号: t72288359379.4万获赞18.3万粉丝此用户没有填写简介t722883593"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAA5m9rtoJtEIBfW3gGYA2fsCVyX2WTABQ5s-h-Ty5nA1Z-T6YsWZ5oved6mb1IUW-2?e", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "76025973593关注抖音号: 76025973593930获赞4589粉丝此用户没有填写简介76025973593"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAAI9PIUY7n7jvza-251_hp-lZ1Kkr3jxiAU1wAy8__r-cw1gsTVJ25EDWVaWuC77yj?e", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "34846393593关注抖音号: 348463935934.3万获赞1.0万粉丝此用户没有填写简介3484639359"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAALk_-PvpZtR5xiZfIYzQHLTjjrurgtBEcKEU9VtV68lE?enter_from=search_resu", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "58627203593关注抖音号: 58627203593414获赞3412粉丝今天很开心58627203593"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAA3ivt6FympCi7E-yBW7yrl8t6I-SACqNMNLG25vA2kLk?enter_from=search_resu", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "41591303593关注抖音号: 415913035930获赞7402粉丝此用户没有填写简介41591303593"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAAagxzmVYy6U3OW1Y02b12C5DKN_1GiLKen2HZl4lXZdrTvm5VL2L59J2tDLVSiwNo?e", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "30639823593关注抖音号: 306398235932175获赞1701粉丝此用户没有填写简介3063982359"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAA-rjKD_ehSJ2eSZq7HsFOlut_toOC03_VlJlBIElp4MhrT-OYXWF5xf4MEjnys2tp?e", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "用户650599243593关注抖音号: 202456252971获赞11粉丝饭搭子：用户650599243593"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAAaawxybrWFssLNAlt-HFrTTLY9ZsxPLP8CCMnWxx3tfs?enter_from=search_resu", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "用户6800903663593关注抖音号: dy7wj6h4k8jc0获赞17粉丝此用户没有填写简介用户68009036"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAANNQEClKMjO3T0g6Q4JddMmmLjVaUOJZq6GxMQTryTNFgEAJbEpxbtomeRxzTrF8D?e", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "用户5246218513593关注抖音号: 860359459390获赞12粉丝此用户没有填写简介用户524621851"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAA02ys1nhzHIgB_VnPIh1DP_F7G1RYjv6R7QkmRm-PX3RVcsN7Duy5edyJNajlX4rG?e", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "23670563593关注抖音号: 23670563593623获赞6499粉丝此用户没有填写简介23670563593"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAAUVQFYMpKxmyx5rIJor0gRg0LfHGBhSUtJJ8rfPlaN5c?enter_from=search_resu", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "用户8081358873593关注抖音号: dy1tcui6j1cv0获赞15粉丝此用户没有填写简介用户80813588"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAAcBb1cr-Pm4C7gZ3-i4Xo1kwHSFUngoOQZJpFy3LIXms?enter_from=search_resu", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "67277663593关注抖音号: 672776635932882获赞1357粉丝此用户没有填写简介6727766359"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAAVLofOfacCwO20JL5Yv73zeT9BCGrEod9O9AA-r41Iyw?enter_from=search_resu", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "用户151221543593关注抖音号: 584177388723获赞13粉丝此用户没有填写简介用户1512215435"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAA75vVChq7qAYkdCns4azIjZuRdQgpEqWY8bSJb4cVvhQEbfwEsqL7MlU7aqXRq1Co?e", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "用户475769593593关注抖音号: 279378345960获赞0粉丝此用户没有填写简介用户47576959359"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAAThu6_KvNh7N0mTUNPJ5bB-GhqJLU_C1KA5sTPMOsm-6Z__QcTeaJ16gd8Cq9KZqI?e", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "91081173593关注抖音号: 9108117359311.5万获赞2300粉丝此用户没有填写简介910811735"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAAPPpiY0vFFdMbDhEaxnau2A1A6_KxbJ5Z_nRjIqdbgKfyfkq2R5YsZeYHUX4MvkyJ?e", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "44705893593关注抖音号: 4470589359373获赞2039粉丝此用户没有填写简介44705893593"}
+   {"href": "//www.douyin.com/user/MS4wLjABAAAACM70LwrkqcKl_6_bu8l4NX7eCA4oJpJypks6UVaOFNo?enter_from=search_resu", "cls": "RZuwF26I BqU22QCu eOKrlzJR", "text": "1143273593关注抖音号: 11432735934.0万获赞2307粉丝此用户没有填写简介1143273593"}
+
+===== C. 当前 URL 是否已含 sec_uid =====

@@ -1,0 +1,172 @@
+# 工具3 指标库 (Metric Registry) — 能力边界的唯一真相来源
+# 字段: metric_id / name / level(video|comment) / engine(stat|llm|derived) / inputs / method / v0 / reliability
+# 规则: 指标必须能追溯到工具1 产出的字段; 追溯不到的进 not_available 区
+
+version: "0.2"
+generated: "2026-09-09"
+
+metrics:
+  # ========== 视频层 · 基础 (stat) ==========
+  - {metric_id: video_id, name: 视频ID, level: video, engine: stat, inputs: [platform_item_id], method: 直接读取, v0: true}
+  - {metric_id: author, name: 作者昵称, level: video, engine: stat, inputs: [author.nickname], method: 直接读取, v0: true}
+  - {metric_id: duration_sec, name: 视频时长, level: video, engine: stat, inputs: [media.duration_seconds], method: 直接读取, v0: true}
+  - {metric_id: publish_date, name: 发布日期, level: video, engine: stat, inputs: [publish_time], method: 直接读取, v0: true}
+  - {metric_id: publish_weekday, name: 发布星期, level: video, engine: stat, inputs: [publish_time], method: 派生, v0: true}
+  - {metric_id: publish_hour, name: 发布小时, level: video, engine: stat, inputs: [publish_time], method: 派生, v0: true}
+  - {metric_id: is_holiday, name: 是否节假日, level: video, engine: stat, inputs: [publish_time, holiday_calendar], method: 查国务院节假日表, v0: true, reliability: "仅收录2024-2026; 未收录年份返回空(不猜)"}
+  - {metric_id: holiday_name, name: 节日名, level: video, engine: stat, inputs: [publish_time], method: 查节假日表, v0: true, reliability: 同上}
+  - {metric_id: is_weekend, name: 是否周末, level: video, engine: stat, inputs: [publish_time], method: 星期判断, v0: true}
+  - {metric_id: is_makeup_workday, name: 是否调休上班日, level: video, engine: stat, inputs: [publish_time], method: 查调休表, v0: true, reliability: "调休上班的周末"}
+  - {metric_id: is_rest_day, name: 是否休息日, level: video, engine: stat, inputs: [publish_time], method: 放假日或(周末且非调休), v0: true}
+
+  # ========== 视频层 · 账号维度 (研究总体过滤; 口径见 accounts.yaml) ==========
+  - {metric_id: account_uid, name: 作者UID, level: video, engine: stat, inputs: [author.id], method: 直接读取, v0: true}
+  - {metric_id: account_status, name: 账号判定, level: video, engine: stat, inputs: [author.id, author.certification, accounts.yaml], method: "白名单+认证关键词规则", v0: true, reliability: "target/borderline/non_target/unknown; 口径见 accounts.yaml"}
+  - {metric_id: is_target_account, name: 是否目标账号, level: video, engine: stat, inputs: [account_status], method: 派生, v0: true, reliability: "研究总体过滤键; unknown → 空(不下断言)"}
+  - {metric_id: sample_role, name: 样本分层, level: video, engine: stat, inputs: [account_status, sample_policy], method: 查 sample_policy, v0: true, reliability: "main=主样本 / robustness=稳健性对照 / excluded / undetermined; 口径见 accounts.yaml"}
+  - {metric_id: account_admin_type, name: 账号主体类型, level: video, engine: stat, inputs: [accounts.yaml], method: 读取, v0: true, reliability: "文旅局/融媒体中心/个人IP/企业品牌等"}
+  - {metric_id: account_level, name: 行政层级, level: video, engine: stat, inputs: [accounts.yaml], method: 读取, v0: true, reliability: "省级/地市/县区; 仅白名单账号有值"}
+  - {metric_id: account_province, name: 所属省份, level: video, engine: stat, inputs: [accounts.yaml], method: 读取, v0: true, reliability: 同上}
+  - {metric_id: account_region, name: 所属大区, level: video, engine: stat, inputs: [accounts.yaml], method: 读取, v0: true, reliability: "东/中/西/东北; 地区异质性分析用"}
+
+  # ========== 视频层 · 互动 (stat) ==========
+  - {metric_id: likes, name: 点赞数, level: video, engine: stat, inputs: [stats.likes], method: 直接读取, v0: true}
+  - {metric_id: comments_n, name: 评论数, level: video, engine: stat, inputs: [stats.comments], method: 直接读取, v0: true}
+  - {metric_id: collects, name: 收藏数, level: video, engine: stat, inputs: [stats.collects], method: 直接读取, v0: true}
+  - {metric_id: shares, name: 转发数, level: video, engine: stat, inputs: [stats.shares], method: 直接读取, v0: true}
+  - {metric_id: recommends, name: 推荐数, level: video, engine: stat, inputs: [stats.recommends], method: 直接读取, v0: true}
+  - {metric_id: engage_ratio, name: 评论点赞比, level: video, engine: stat, inputs: [stats.comments, stats.likes], method: comments/likes, v0: true}
+
+  # ========== 视频层 · 文案 (stat) ==========
+  - {metric_id: caption_len, name: 文案字数, level: video, engine: stat, inputs: [caption], method: 字符数, v0: true}
+  - {metric_id: hashtag_count, name: 话题标签数, level: video, engine: stat, inputs: [hashtags], method: 计数, v0: true}
+  - {metric_id: mention_count, name: "文案@提及数", level: video, engine: stat, inputs: [caption], method: 正则计数, v0: true}
+  - {metric_id: caption_emoji, name: 文案emoji数, level: video, engine: stat, inputs: [caption], method: 正则计数, v0: true}
+  - {metric_id: caption_question, name: 文案问句数, level: video, engine: stat, inputs: [caption], method: 正则计数, v0: true}
+
+  # ========== 视频层 · 账号 (stat) ==========
+  - {metric_id: followers, name: 粉丝数, level: video, engine: stat, inputs: [author.follower_count], method: 直接读取, v0: true}
+  - {metric_id: total_favorited, name: 获赞总数, level: video, engine: stat, inputs: [author.total_favorited], method: 直接读取, v0: true}
+  - {metric_id: is_verified, name: 是否认证, level: video, engine: stat, inputs: [author.certification], method: 非空判断, v0: true}
+  - {metric_id: signature_len, name: 签名长度, level: video, engine: stat, inputs: [author.signature], method: 字符数, v0: true}
+
+  # ========== 视频层 · 评论覆盖 (stat, 可信度关键) ==========
+  - {metric_id: comments_collected, name: 已采评论数, level: video, engine: stat, inputs: [comments.collected_count], method: 直接读取, v0: true}
+  - {metric_id: comments_platform_total, name: 平台评论总数, level: video, engine: stat, inputs: [comments.platform_total], method: 直接读取, v0: true}
+  - {metric_id: comment_coverage, name: 评论覆盖率, level: video, engine: stat, inputs: [comments.top_level_coverage], method: 顶层评论/平台总数, v0: true, reliability: "低覆盖率会低估官方互动与评论特征"}
+
+  # ========== 视频层 · 官方互动 (stat, 核心) ==========
+  - {metric_id: author_reply_n, name: 官方回复数, level: video, engine: stat, inputs: [comments.is_author], method: 计数, v0: true, reliability: "依赖评论采集覆盖率"}
+  - {metric_id: reply_rate, name: 官方回复率, level: video, engine: stat, inputs: [comments.is_author, comments.parent_id], method: 被回复顶层评论/顶层评论, v0: true, reliability: "依赖评论采集覆盖率; 漏采会低估"}
+  - {metric_id: reply_speed_p25_min, name: 回复速度P25, level: video, engine: stat, inputs: [comments.created_at], method: 分位(分钟), v0: true, reliability: "仅对有配对的作者回复; 样本少时不稳定"}
+  - {metric_id: reply_speed_p50_min, name: 回复速度P50, level: video, engine: stat, inputs: [comments.created_at], method: 分位(分钟), v0: true, reliability: 同上}
+  - {metric_id: reply_speed_p75_min, name: 回复速度P75, level: video, engine: stat, inputs: [comments.created_at], method: 分位(分钟), v0: true, reliability: 同上}
+  - {metric_id: reply_speed_p90_min, name: 回复速度P90, level: video, engine: stat, inputs: [comments.created_at], method: 分位(分钟), v0: true, reliability: 同上}
+  - {metric_id: reply_text_len_avg, name: 官方回复平均字数, level: video, engine: stat, inputs: [comments.is_author, comments.text], method: 均值, v0: true}
+  - {metric_id: reply_emoji_rate, name: 回复含emoji率, level: video, engine: stat, inputs: [comments.is_author, comments.text], method: 比例, v0: true}
+  - {metric_id: reply_at_rate, name: "回复含@率", level: video, engine: stat, inputs: [comments.is_author, comments.text], method: 比例, v0: true}
+  - {metric_id: author_engaged_comments, name: 被回复评论数, level: video, engine: stat, inputs: [author_engagement.replied_comment_count], method: 直接读取, v0: true}
+
+  # ========== 视频层 · 评论群体 (stat) ==========
+  - {metric_id: comment_len_avg, name: 评论平均字数, level: video, engine: stat, inputs: [comments.text], method: 均值, v0: true, reliability: "仅代表采到的评论"}
+  - {metric_id: comment_len_median, name: 评论字数中位, level: video, engine: stat, inputs: [comments.text], method: 中位数, v0: true}
+  - {metric_id: comment_emoji_rate, name: 评论含emoji率, level: video, engine: stat, inputs: [comments.text], method: 比例, v0: true}
+  - {metric_id: comment_question_rate, name: 评论问句率, level: video, engine: stat, inputs: [comments.text], method: "顶层评论中含?的比例", v0: true}
+  - {metric_id: top_reply_ratio, name: 顶层占比, level: video, engine: stat, inputs: [comments.parent_id], method: 顶层/总数, v0: true}
+  - {metric_id: hot_comment_ratio, name: 热评占比, level: video, engine: stat, inputs: [comments.is_hot], method: 比例, v0: true, reliability: "依赖平台 is_hot 口径"}
+  - {metric_id: ip_region_entropy, name: IP地区多样性, level: video, engine: stat, inputs: [comments.ip_label], method: 香农熵, v0: true, reliability: "ip_label 是归属地非真实位置"}
+  - {metric_id: ip_top_region, name: 最大客源地, level: video, engine: stat, inputs: [comments.ip_label], method: 众数, v0: true, reliability: 同上}
+  - {metric_id: comment_velocity_24h, name: 24h评论占比, level: video, engine: stat, inputs: [comments.created_at, publish_time], method: 发布后24h内评论/总评论, v0: true}
+
+  # ========== 视频层 · 字幕 (stat) ==========
+  - {metric_id: subtitle_len, name: 字幕字数, level: video, engine: stat, inputs: [subtitles.full_text], method: 字符数, v0: true, reliability: "ASR+LLM修正产物; 音乐/现场音视频识别质量有限"}
+  - {metric_id: subtitle_segments, name: 字幕段数, level: video, engine: stat, inputs: [subtitles.segments_count], method: 直接读取, v0: true}
+  - {metric_id: subtitle_source, name: 字幕来源, level: video, engine: stat, inputs: [subtitles.source], method: 直接读取, v0: true}
+
+  # ========== 视频层 · Text Liveness 词典密度 (stat, 纯字符串可复现) ==========
+  # 口径: smanalyze/lexicon.yaml v0.2 (词表可审可改; 改词表需重算, 零成本)
+  # 文本预处理: ① 繁→简归一化(zhconv) ② 字幕取 LLM 修正版 subtitles.llm.json, 缺失回退原始 ASR
+  # 双通道: _cap = 仅文案(作者亲写, 无 ASR 噪声); _all = 文案+口播字幕
+  - {metric_id: tl_cap_first_person, name: "文本活人感·第一人称(文案)", level: video, engine: stat, inputs: [caption], method: 词表命中(长词优先非重叠), v0: true, reliability: "词表 v0.2 可调; 只做字符串匹配不做语义; 已繁→简归一化"}
+  - {metric_id: tl_all_first_person, name: "文本活人感·第一人称(文案+字幕)", level: video, engine: stat, inputs: [caption, subtitles.llm.json], method: 同上, v0: true, reliability: "字幕为 LLM 修正版; 仍可能残留 ASR 错字"}
+  - {metric_id: tl_cap_colloquial, name: "文本活人感·口语化(文案)", level: video, engine: stat, inputs: [caption], method: 词表命中, v0: true, reliability: 同上}
+  - {metric_id: tl_all_colloquial, name: "文本活人感·口语化(文案+字幕)", level: video, engine: stat, inputs: [caption, subtitles.llm.json], method: 同上, v0: true, reliability: 同上}
+  - {metric_id: tl_cap_emotion, name: "文本活人感·情绪(文案)", level: video, engine: stat, inputs: [caption], method: 词表+emoji命中, v0: true, reliability: 同上}
+  - {metric_id: tl_all_emotion, name: "文本活人感·情绪(文案+字幕)", level: video, engine: stat, inputs: [caption, subtitles.llm.json], method: 同上, v0: true, reliability: 同上}
+  - {metric_id: tl_cap_slang, name: "文本活人感·网络语言(文案)", level: video, engine: stat, inputs: [caption], method: 词表命中, v0: true, reliability: "只测网络流行语词; 网络词时效性强, 词表需随年份更新; 与 tl_llm_slang 非同一构念"}
+  - {metric_id: tl_all_slang, name: "文本活人感·网络语言(文案+字幕)", level: video, engine: stat, inputs: [caption, subtitles.llm.json], method: 同上, v0: true, reliability: 同上}
+  - {metric_id: tl_cap_meme, name: "文本活人感·玩梗(文案)", level: video, engine: stat, inputs: [caption], method: 词表命中, v0: true, reliability: "只测「引用具体梗」, 覆盖有限; 与 tl_llm_meme(更宽的幽默化)非同一构念"}
+  - {metric_id: tl_all_meme, name: "文本活人感·玩梗(文案+字幕)", level: video, engine: stat, inputs: [caption, subtitles.llm.json], method: 同上, v0: true, reliability: 同上}
+  - {metric_id: tl_cap_rhetorical, name: "文本活人感·反问(文案)", level: video, engine: stat, inputs: [caption], method: 正则句式, v0: true, reliability: "与疑问句区分靠句式模板"}
+  - {metric_id: tl_all_rhetorical, name: "文本活人感·反问(文案+字幕)", level: video, engine: stat, inputs: [caption, subtitles.llm.json], method: 同上, v0: true, reliability: 同上}
+  - {metric_id: tl_index_cap, name: "文本活人感指数(文案, 等权)", level: video, engine: stat, inputs: [tl_cap_*], method: "6维是否出现的均值", v0: true, reliability: "等权版; PCA/因子版由研究端自算"}
+  - {metric_id: tl_index_all, name: "文本活人感指数(文案+字幕, 等权)", level: video, engine: stat, inputs: [tl_all_*], method: 同上, v0: true, reliability: 同上}
+
+  # ========== 评论层 (stat) ==========
+  - {metric_id: comment_level, name: 层级, level: comment, engine: stat, inputs: [parent_id], method: 顶层/回复, v0: true}
+  - {metric_id: is_author_reply, name: 是否官方回复, level: comment, engine: stat, inputs: [is_author], method: 直接读取, v0: true}
+  - {metric_id: author_replied, name: 是否被官方回复, level: comment, engine: stat, inputs: [author_replied], method: 直接读取, v0: true}
+  - {metric_id: char_len, name: 字数, level: comment, engine: stat, inputs: [text], method: 字符数, v0: true}
+  - {metric_id: has_emoji, name: 含emoji, level: comment, engine: stat, inputs: [text], method: 正则, v0: true}
+  - {metric_id: has_at, name: "含@", level: comment, engine: stat, inputs: [text], method: 正则, v0: true}
+  - {metric_id: is_question, name: 是否问句, level: comment, engine: stat, inputs: [text], method: "含?或?", v0: true}
+  - {metric_id: hours_since_publish, name: 发布后小时数, level: comment, engine: stat, inputs: [created_at, publish_time], method: 差值, v0: true}
+
+  # ========== 视觉派生 (工具1 visual.json → Visual Liveness) ==========
+  - {metric_id: visual_present_ratio, name: 真人出镜比例, level: video, engine: derived, inputs: [visual.json], method: 读取工具1视觉派生(person_presence_ratio), v0: true, reliability: "1fps采样, 短出镜会漏检 → 偏低估"}
+  - {metric_id: face_count_avg, name: 平均人脸数, level: video, engine: derived, inputs: [visual.json], method: 读取工具1视觉派生, v0: true, reliability: 同上}
+  - {metric_id: face_count_max, name: 最大人脸数, level: video, engine: derived, inputs: [visual.json], method: 读取工具1视觉派生, v0: true, reliability: 同上}
+  - {metric_id: selfie_score, name: 自拍特征分, level: video, engine: derived, inputs: [visual.json], method: 人脸框相对面积均值, v0: true, reliability: "启发式指标, 非人工标注"}
+  - {metric_id: shake_index, name: 画面抖动指数, level: video, engine: derived, inputs: [visual.json], method: 光流位移统计, v0: true, reliability: "手持拍摄的弱代理"}
+  - {metric_id: camera_motion, name: 镜头运动类型, level: video, engine: derived, inputs: [visual.json], method: 主导位移方向(handheld/pan_tilt), v0: true, reliability: "离散分类, 由启发式判定"}
+  - {metric_id: video_resolution, name: 视频分辨率, level: video, engine: derived, inputs: [visual.json.video_meta], method: 直接读取, v0: true}
+  - {metric_id: scene_professional_score, name: 场景专业度, level: video, engine: derived, inputs: [scene.json], method: 读取工具1派生, v0: false, reliability: "需另跑 tools/run_scene.py; 本轮未跑"}
+
+  # ========== 因变量派生 (ETI, 依赖标注) ==========
+  - {metric_id: etir, name: 表达性旅游意愿率, level: video, engine: derived, inputs: [labels_willingness_level.csv], method: "意愿分级≥1占比", v0: true, reliability: "分母只含成功标注的评论; 受评论覆盖率影响"}
+  - {metric_id: strong_etir, name: 强意愿率, level: video, engine: derived, inputs: [labels_willingness_level.csv], method: "意愿分级≥3占比", v0: true, reliability: 同上}
+  - {metric_id: eti_mean, name: 平均意愿强度, level: video, engine: derived, inputs: [labels_willingness_level.csv], method: "0-4均值", v0: true, reliability: 同上}
+  - {metric_id: eti_n, name: 参与计算评论数, level: video, engine: derived, inputs: [labels_willingness_level.csv], method: 计数, v0: true, reliability: "分母; 与 comment_coverage 一起看"}
+
+  # ========== 标注 (LLM) ==========
+  - {metric_id: video_category, name: 视频类别, level: video, engine: llm, inputs: [caption, subtitles], method: LLM分类(标签可配置), v0: true, reliability: "LLM判断有波动; 需抽检; 需先跑 label"}
+  - {metric_id: willingness_level, name: 意愿分级, level: comment, engine: llm, inputs: [text], method: LLM标注(标签体系可配置), v0: true, reliability: "抽样策略影响分布; 需抽检"}
+  - {metric_id: is_authenticity, name: 真实性表达, level: comment, engine: llm, inputs: [text], method: LLM标注, v0: true, reliability: "指标已登记; 本轮研究不需要(未跑)"}
+  - {metric_id: is_social_presence, name: 社会临场感表达, level: comment, engine: llm, inputs: [text], method: LLM标注, v0: true, reliability: "指标已登记; 本轮研究不需要(未跑)"}
+  - {metric_id: tl_llm_first_person, name: "LLM·第一人称", level: video, engine: llm, inputs: [caption, subtitles.llm.json], method: LLM二分类+理由, v0: true, reliability: "与词典指标互补; 需抽检"}
+  - {metric_id: tl_llm_colloquial, name: "LLM·口语化", level: video, engine: llm, inputs: [caption, subtitles.llm.json], method: 同上, v0: true, reliability: 同上}
+  - {metric_id: tl_llm_emotion, name: "LLM·情绪", level: video, engine: llm, inputs: [caption, subtitles.llm.json], method: 同上, v0: true, reliability: 同上}
+  - {metric_id: tl_llm_slang, name: "LLM·网络语言", level: video, engine: llm, inputs: [caption, subtitles.llm.json], method: 同上, v0: true, reliability: "口径比词典宽(含口语网感); 与 tl_*_slang 非同一构念"}
+  - {metric_id: tl_llm_meme, name: "LLM·玩梗(幽默化)", level: video, engine: llm, inputs: [caption, subtitles.llm.json], method: 同上, v0: true, reliability: "口径比词典宽(含自嘲/吐槽式幽默); 对应 HCI3; 与 tl_*_meme 非同一构念"}
+  - {metric_id: tl_llm_rhetorical, name: "LLM·反问", level: video, engine: llm, inputs: [caption, subtitles.llm.json], method: 同上, v0: true, reliability: 同上}
+
+# ========== 已知不可得 / 需补采 ==========
+not_available:
+  - requirement: 播放量
+    status: impossible
+    reason: 抖音网页接口不返回该字段
+    alternative: v2 移动端接口 / 数据平台
+  - requirement: 距离目的地
+    status: impossible
+    reason: 无用户真实位置; ip_label 仅为归属地
+    alternative: 需外部数据; ip_label 可作弱代理
+  - requirement: 方言识别
+    status: impossible
+    reason: 无方言识别模型
+    alternative: 工具1 §17 备选方案(FunASR/讯飞)未实施
+  - requirement: 工作人员出镜
+    status: impossible
+    reason: 工具1 v0c 视觉判断暂停(待 VLM/人工决策)
+    alternative: 关键帧已就绪, 可用 VLM 或人工标注
+  - requirement: 非专业场景
+    status: impossible
+    reason: 同上
+    alternative: 同上
+  - requirement: 作品数
+    status: need_collect
+    reason: 视频详情接口不返回 aweme_count
+    alternative: 抓取作者主页(工具1 低 effort 补采)
+  - requirement: 音乐信息
+    status: need_collect
+    reason: 未采集
+    alternative: 工具1 补字段

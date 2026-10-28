@@ -1,0 +1,18 @@
+# 标注任务: 反问 (视频层, 二分类) — Text Liveness / 反问
+# 输入: 文案 + 纯口播文本(subtitles.text, 已剥离 SRT 时间戳标记)
+task_id: tl_llm_rhetorical
+name: 文本活人感·反问
+level: video
+input_field: [caption, subtitles.text]
+labels:
+  0: 无
+  1: 有
+output_fields: [label, why]
+prompt_hint: |
+  判断文本是否含**反问句**(答案已隐含, 不需要对方回答)。
+  - 例: "谁不想来这里过个周末呢?""这么美的地方, 你还不来看看?""难道不值得一去吗?"
+  - **普通疑问句不算**: "这个地方在哪里?""有没有攻略?" = 0(那是真提问)
+  - 设问(自问自答, 如"为什么红河这么火? 因为…") = 1
+  - 号召句"快来打卡吧!"不含问号 = 0
+  只依据给定文本判断, 不要脑补。
+max_input_chars: 1500

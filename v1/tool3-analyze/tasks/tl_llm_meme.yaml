@@ -1,0 +1,18 @@
+# 标注任务: 玩梗 (视频层, 二分类) — Text Liveness / HCI3 幽默化
+# 输入: 文案 + 纯口播文本(subtitles.text, 已剥离 SRT 时间戳标记)
+task_id: tl_llm_meme
+name: 文本活人感·玩梗
+level: video
+input_field: [caption, subtitles.text]
+labels:
+  0: 无
+  1: 有
+output_fields: [label, why]
+prompt_hint: |
+  判断文本是否**主动引用/化用某个具体梗**(比网络语言更具体、更依赖上下文)。
+  - 例: "city不city""挖呀挖""你礼貌吗""老六""早C晚A""科目三""我太难了""格局打开""一整个爱住"
+  - 自嘲/吐槽式幽默(如"我们文旅局也很想低调") = 1
+  - 只是用网络词但没有具体梗 = 0(那是网络语言维度)
+  - 严肃政务内容 = 0
+  只依据给定文本判断, 不要脑补。
+max_input_chars: 1500

@@ -1,0 +1,12 @@
+﻿
+===== 定位 YNHHFB =====
+>> 候选抖音号 YNHHFB1089 (前缀) → 云南红河发布认证徽章红河州融媒体中心官方
+>> 验证候选主页: MS4wLjABAAAAgfW402YshG30a2WRdY...
+>> 主页校验通过, 采用 YNHHFB
+  RESULT sec_uid: MS4wLjABAAAAgfW402YshG30a2WRdYlkRyYdTYsD0MgpCe-Ki5Ymf70
+
+===== 定位 55008743593 =====
+>> 候选抖音号 55008743593388 (前缀) → 红河文旅认证徽章红河哈尼族彝族自治州文化
+>> 验证候选主页: MS4wLjABAAAAzV1wNMOd-askb-PxHj...
+>> 主页校验通过, 采用 55008743593
+  RESULT sec_uid: MS4wLjABAAAAzV1wNMOd-askb-PxHj8I8lWfvXMgy8MFgLy3g7mLuiM

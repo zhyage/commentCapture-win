@@ -1,0 +1,211 @@
+# ============================================================
+# 目标账号白名单与判定规则 (工具3)
+# ============================================================
+# 用途: 给每条视频打 `account_status`, 让研究端能过滤"非目标账号"的数据,
+#       避免样本被个人号/品牌号/混入内容污染(2026-09-09 实测已发现 4 条)。
+#
+# 判定优先级(自上而下, 命中即停):
+#   1. manual_overrides[uid]        —— 人工裁决, 优先级最高
+#   2. accounts[uid].status         —— 白名单显式登记
+#   3. rule.target_cert_keywords    —— 认证主体含文旅行政关键词 → target
+#   4. rule.borderline_cert_keywords—— 认证为融媒体/广电/报社 → borderline(待人工确认)
+#   5. 其余                          —— non_target
+#
+# status 语义:
+#   target      符合"文旅官方账号"总体(文旅行政/事业单位主体)
+#   borderline  主体不是文旅局而是地方官方发布平台(融媒体中心等) → 需研究端决定去留
+#   non_target  个人 IP / 企业品牌号 / 达人博主 → 不应进入研究样本
+#   unknown     信息不足
+#
+# ⚠️ 易混淆点: 一些"非目标"视频是通过**目标号主页翻页混入**的(非本人作品但很相关),
+#    它们的 uid 依然不是目标账号 → 一律判 non_target, 但 reason 里注明来源。
+# ============================================================
+
+version: "0.1"
+generated: "2026-09-09"
+
+# ============================================================
+# 样本分层口径(研究端决定, 2026-09-09)
+# ============================================================
+# 决定: 云南红河发布(融媒体中心)不污染主样本, 也不丢弃 —— 留作稳健性对照。
+#   主样本       = target                     (严格符合 idea.md "文旅官方账号")
+#   稳健性对照   = borderline                 (政务/融媒体发布号; 检验结论是否随总体口径变化)
+#   排除         = non_target / unknown
+# 产出列: sample_role ∈ main | robustness | excluded | undetermined
+sample_policy:
+  main: [target]
+  robustness: [borderline]
+  excluded: [non_target]
+  undetermined: [unknown]
+  decided_at: "2026-09-09"
+  decided_by: 用户
+  note: "主样本用 target; borderline 仅在稳健性检验时纳入, 论文需说明总体口径"
+  # 地区口径(2026-09-11 用户决定): 接受当前地区不平衡, 不做地区异质性分析。
+  # 现状: 西部 7 / 中部 1 / 东部 1 → region 仅作控制变量, 不作为异质性分组依据。
+  # 若后续补东部/中部账号, 应同步更新本注记与报告说明。
+  region_policy:
+    decided_at: "2026-09-11"
+    decided_by: 用户
+    decision: accept_imbalance
+    note: "地区样本不足以做东中西部对比 → account_region 仅作控制变量; 报告须写明未做地区异质性"
+
+rule:
+  # 任一命中 → target。注意: 各省厅名写法不一, 必须覆盖"文化广电和旅游厅"(浙江)这类变体,
+  # 否则会出现假阴性(实测: 浙江省文化广电和旅游厅官方 → 曾误判 non_target)。
+  # 因此以"旅游厅/旅游局"为核心锚点, 再列常见完整写法。
+  target_cert_keywords:
+    - 文化和旅游厅
+    - 文化和旅游局
+    - 文化广电和旅游厅
+    - 文化广电和旅游局
+    - 广播电视和旅游局
+    - 旅游发展委员会
+    - 旅游厅              # 锚点: 覆盖 "文化广电和旅游厅" 等变体
+    - 旅游局              # 锚点: 覆盖 "广播电视和旅游局" 等变体
+    - 文旅局
+    - 文化和旅游
+    - 文旅集团
+  # 命中 → borderline(非文旅行政主体; 典型为地方新闻/政务发布平台)
+  borderline_cert_keywords:
+    - 融媒体中心
+    - 广播电视台
+    - 广播电视总台
+    - 日报社
+    - 发布中心
+  # 判定说明(避免口径争议):
+  #   - "文化和旅游信息中心/数据中心"(如重庆文旅) → **target**: 属文旅系统下属事业单位
+  #   - "融媒体中心/广播电视台"(如云南红河发布) → **borderline**: 属宣传/新闻系统, 非文旅主体
+
+accounts:
+  # ---------- 已有样本(2026-09-09 采集) ----------
+  - uid: "405032890799566"
+    nickname: 红河文旅
+    douyin_id: "55008743593"
+    sec_uid: "MS4wLjABAAAAzV1wNMOd-askb-PxHj8I8lWfvXMgy8MFgLy3g7mLuiM"
+    status: target
+    admin_type: 文旅局
+    level: 地市            # 省级 | 地市 | 县区
+    province: 云南
+    region: 西部           # 东部 | 中部 | 西部 | 东北
+    evidence: "认证=红河哈尼族彝族自治州文化和旅游局官方抖音号"
+
+  - uid: "110105711688"
+    nickname: 云南红河发布
+    douyin_id: "YNHHFB"
+    status: borderline
+    admin_type: 融媒体中心
+    level: 地市
+    province: 云南
+    region: 西部
+    evidence: "认证=红河州融媒体中心官方抖音号 —— 非文旅局主体, 但发布目的地推广内容"
+    note: "占当前样本 10/23 条; 已定口径: 仅进稳健性样本(见 sample_policy)"
+
+  # ---------- 阶段一扩采(2026-09-11 账号预检通过, uid 待采集后回填) ----------
+  # 预检方式: 搜索卡片读「认证徽章<主体名>」; uid 需等采集 1 条视频后从 video.json 回填
+  - uid: null
+    nickname: 贵州文旅
+    douyin_id: "gzslyfzwyh"
+    sec_uid: "MS4wLjABAAAANaxL5A-fVLepESopaxYad4yrpr6SXFsQKX9xa_1_92E"
+    status: target
+    admin_type: 文旅厅
+    level: 省级
+    province: 贵州
+    region: 西部
+    evidence: "认证=贵州省文化和旅游厅官方"
+
+  - uid: null
+    nickname: 广西文化和旅游厅
+    douyin_id: "gxtravel"
+    sec_uid: "MS4wLjABAAAAKJ3BVjVVHfCnFjJg5RdIbXWbfAvExvTKvz96QGXTrZc"
+    status: target
+    admin_type: 文旅厅
+    level: 省级
+    province: 广西
+    region: 西部
+    evidence: "认证=广西壮族自治区文化和旅游厅官方"
+
+  - uid: null
+    nickname: 云南省文化和旅游厅
+    douyin_id: "ynswhhlyt"
+    sec_uid: "MS4wLjABAAAAkJhiJ0ykvO1BoIjdzqt9kZt3RWq5W78v5UTwY1z5mC0"
+    status: target
+    admin_type: 文旅厅
+    level: 省级
+    province: 云南
+    region: 西部
+    evidence: "认证=云南省文化和旅游厅官方"
+
+  - uid: null
+    nickname: 四川文旅
+    douyin_id: "sichuanwenlv"
+    sec_uid: "MS4wLjABAAAAWSWF8iYfAxMV-BT9Yql2v9yn9OXPasox_8_NcvphUoX28-Th4-BNxnyN3GPApa7-"
+    status: target
+    admin_type: 文旅厅
+    level: 省级
+    province: 四川
+    region: 西部
+    evidence: "认证=四川省文化和旅游厅官方"
+
+  - uid: null
+    nickname: 陕西文旅
+    douyin_id: "sxly6"
+    sec_uid: "MS4wLjABAAAAxudggltM1yAMImPv2NMkpvYCX6PPmaC82xos1-Fz_6Y"
+    status: target
+    admin_type: 文旅厅
+    level: 省级
+    province: 陕西
+    region: 西部
+    evidence: "认证=陕西省文化和旅游厅官方"
+
+  - uid: null
+    nickname: 浙江文旅
+    douyin_id: "26986112538"
+    sec_uid: "MS4wLjABAAAAAkNF6JQwFSg6XZH9si6KIVk-vrtTw2RIUKJbjAEKOrw"
+    status: target
+    admin_type: 文旅厅
+    level: 省级
+    province: 浙江
+    region: 东部
+    evidence: "认证=浙江省文化广电和旅游厅官方"
+    note: "厅名含'广电' → 曾因关键词漏变体被误判 non_target(已修规则, 见 test_account_status_cert_keyword_covers_gd_variant)"
+
+  - uid: null
+    nickname: 重庆文旅
+    douyin_id: "cqwlzx"
+    sec_uid: "MS4wLjABAAAA1ksbmz_-P9FvybFf0xZy_48EYFDTFIZHbuwo_IOdgJs"
+    status: target
+    admin_type: 文化和旅游信息中心
+    level: 省级
+    province: 重庆
+    region: 西部
+    evidence: "认证=重庆市文化和旅游信息中心(重庆市文化和旅游数据中心)"
+    note: "属文旅系统下属事业单位 → 判 target(与'融媒体中心'不同, 后者属宣传系统 → borderline)"
+
+  - uid: null
+    nickname: 安徽文旅
+    douyin_id: "Anhuilvyou"
+    sec_uid: "MS4wLjABAAAAkARWCBo66Yw8tJ2TyhatPdq0G4rh3aX6edsdtJbMtdg"
+    status: target
+    admin_type: 文旅厅
+    level: 省级
+    province: 安徽
+    region: 中部
+    evidence: "认证=安徽省文化和旅游厅官方"
+
+manual_overrides:
+  "63182365037":
+    status: non_target
+    admin_type: 个人IP
+    reason: "了不起的木工孙: 无认证, 签名为住车生活个人 IP → 非目的地推广主体; 且不在工具2 语义命中清单内(来自早期手工测试清单 urls.txt)"
+  "69373540632":
+    status: non_target
+    admin_type: 个人博主
+    reason: "MrY: 无认证, 个人旅游/摄影博主, 签名含'品牌推广/商务合作' → 商业合作性质; 系从红河文旅主页翻页混入(来源号 55008743593)"
+  "1538959322664663":
+    status: non_target
+    admin_type: 企业品牌
+    reason: "海信激光电视: 认证主体为青岛海信激光显示股份有限公司 → 企业品牌号; 系从红河文旅主页翻页混入(来源号 55008743593)"
+  "7585894849103578161":
+    status: non_target
+    admin_type: 个人科普
+    reason: "一城一史话: 无认证, 个人地理科普号, 签名含商务合作 → 非官方主体; 且不在工具2 语义命中清单内(来自早期手工测试清单)"

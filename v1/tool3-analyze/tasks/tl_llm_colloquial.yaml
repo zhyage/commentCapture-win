@@ -1,0 +1,18 @@
+# 标注任务: 口语化 (视频层, 二分类) — Text Liveness / HCI2 口语化
+# 输入: 文案 + 纯口播文本(subtitles.text, 已剥离 SRT 时间戳标记)
+task_id: tl_llm_colloquial
+name: 文本活人感·口语化
+level: video
+input_field: [caption, subtitles.text]
+labels:
+  0: 无
+  1: 有
+output_fields: [label, why]
+prompt_hint: |
+  判断文本是否使用**口语化表达**(像跟人聊天, 而非新闻/公文腔)。
+  - 口语标志: "真的""太绝了""狠狠""嘎嘎""谁懂啊""就是说""宝子""老铁""巴适"等, 或语气词"呀/啦/嘛/哈"
+  - 书面/公文腔: "为深入贯彻落实""旨在""据悉""共同推进" = 0
+  - 口语与网络流行语可重叠: 只要像"人说话"就记 1, 不必区分是不是网络词
+  - 纯景点介绍但用短句+语气词 = 1; 纯景点介绍但正式书面 = 0
+  只依据给定文本判断, 不要脑补。
+max_input_chars: 1500

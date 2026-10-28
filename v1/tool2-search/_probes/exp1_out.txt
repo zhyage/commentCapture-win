@@ -1,0 +1,250 @@
+﻿>> 当前 URL: https://www.douyin.com/search/%E7%BA%A2%E6%B2%B3%E6%96%87%E6%97%85?type=user
+>> 导航到用户主页 ...
+
+===== A. 页面标题/URL =====
+title: 红河文旅的抖音 - 抖音
+url: https://www.douyin.com/user/MS4wLjABAAAAzV1wNMOd-askb-PxHj8I8lWfvXMgy8MFgLy3g7mLuiM?from_tab_name=main&showSubTab=video&showTab=post
+
+===== B. 可见短文本 (前 80 个, 去重) =====
+  | 开启读屏标签
+  | 精选
+  | 推荐
+  | AI抖音
+  | 关注
+  | 朋友
+  | 我的
+  | 直播
+  | 放映厅
+  | 短剧
+  | 小游戏
+  | 下载抖音精选
+  | 2026 © 抖音
+  | 京ICP备16016397号-3
+  | 京公网安备 11000002002046号
+  | 电子营业执照
+  | 信息网络传播视听节目许可证 0126733
+  | 增值电信业务经营许可证 京B2-20170846
+  | 互联网新闻信息服务许可证 11220230001
+  | 网络谣言曝光台
+  | 网上有害信息举报
+  | 广告投放
+  | 用户服务协议
+  | 隐私政策
+  | 账号找回
+  | 联系我们
+  | 加入我们
+  | 友情链接
+  | 站点地图
+  | 下载抖音
+  | 抖音电商
+  | 搜索
+  | 充钻石
+  | 客户端
+  | 壁纸
+  | 通知
+  | 消息
+
+1
+  | 消息
+  | 1
+  | 投稿
+  | lw
+  | 53
+  | 粉丝
+  | 3
+  | 我的喜欢
+  | 34
+  | 我的收藏9
+  | 我的收藏
+  | 9
+  | 观看历史30天内
+  | 观看历史
+  | 30天内
+  | 稍后再看0
+  | 稍后再看
+  | 0
+  | 我的作品0
+  | 我的作品
+  | 我的预约
+  | 我的订单
+  | 退出登录
+  | 红河文旅
+  | 认证徽章
+  | 红河哈尼族彝族自治州文化和旅游局官方抖音号
+  | 关注
+324
+  | 324
+  | 粉丝
+15.1万
+  | 15.1万
+  | 获赞
+388.3万
+  | 获赞
+  | 388.3万
+  | 抖音号：55008743593
+  | 有一种最云南的生活叫红河
+  | 分享主页
+  | 关注
+私信
+  | 私信
+  | 下载电脑客户端，桌面快捷访问
+下载
+  | 下载电脑客户端，桌面快捷访问
+  | 下载
+  | 作品
+768
+推荐
+喜欢
+  | 作品
+768
+  | 作品
+  | 768
+  | 喜欢
+  | 作品
+合集
+短剧
+  | 合集
+  | 搜索 Ta 的作品
+日期筛选
+  | 搜索 Ta 的作品
+  | 日期筛选
+  | 置顶
+  | 3745
+  | 979
+  | 1.5万
+  | 93
+  | 82
+  | 599
+  | 50
+  | 1317
+  | 19
+  | 279
+  | 328
+  | 1.1万
+  | 457
+  | 69
+  | 6308
+  | 913
+  | 2035
+  | 668
+  | 493
+  | 970
+  | 4309
+  | 2128
+  | 66
+  | 923
+  | 124
+  | 98
+  | 387
+  | 共创
+  | 360
+  | 51
+  | 431
+  | 41
+  | 339
+  | 244
+  | 42
+  | 2199
+  | 117
+  | 网络谣言曝光台 ｜
+  | ｜ 信息网络传播视听节目许可证 0126733
+  | 热门：
+  | 抖音音乐
+  | 抖音网页版
+  | 韩朵饰品
+  | 24年211大学录取分可以上
+  | 香港身份考大学
+  | 辽宁高考700分分布
+  | 东部战区发布海报
+  | 《隔离邂逅》
+  | #帽子
+  | 进入全屏
+  | 直播加载中
+
+===== C. 含关键词的元素 (可见+隐藏, 含属性) =====
+  {"text": "精选\n推荐\nAI抖音\n关注\n朋友\n我的\n直播\n放映厅\n短剧\n小游戏\n下载抖音精选", "visible": true, "x": 0, "y": 0, "w": 2560, "h": 1249, "attrs": {"id": "root"}}
+  {"text": "精选\n推荐\nAI抖音\n关注\n朋友\n我的\n直播\n放映厅\n短剧\n小游戏\n下载抖音精选", "visible": true, "x": 0, "y": 0, "w": 2560, "h": 1249, "attrs": {"class": "windows-os header-ui LebMor1Z", "id": "dark"}}
+  {"text": "搜索\n\n充钻石\n\n客户端\n\n壁纸\n\n通知\n\n消息\n\n1\n\n投稿\n\n红河文旅\n认证", "visible": true, "x": 160, "y": 0, "w": 2400, "h": 1249, "attrs": {"class": "kHrdyLnb I1M15fTy WIFdqwhn yMrzDwpC", "id": "douyin-right-container"}}
+  {"text": "lw关注53粉丝3我的喜欢34一群爱疯女人，一条心，一个目标，把枣儿红了舞出了不", "visible": true, "x": 2494, "y": 11, "w": 50, "h": 34, "attrs": {}}
+  {"text": "lw关注53粉丝3我的喜欢34一群爱疯女人，一条心，一个目标，把枣儿红了舞出了不", "visible": true, "x": 2510, "y": 11, "w": 34, "h": 34, "attrs": {"class": "RXVWNc2v h5N8ichU sTU2fwaV"}}
+  {"text": "lw关注53粉丝3我的喜欢34一群爱疯女人，一条心，一个目标，把枣儿红了舞出了不", "visible": false, "x": 2510, "y": 45, "w": 34, "h": 0, "attrs": {"class": "FYnN9uYV ko3Bsvqe"}}
+  {"text": "lw关注53粉丝3我的喜欢34一群爱疯女人，一条心，一个目标，把枣儿红了舞出了不", "visible": false, "x": 2510, "y": 45, "w": 0, "h": 30, "attrs": {"class": "_o7id7Pe userMenuPanelShadowAnimation"}}
+  {"text": "lw关注53粉丝3我的喜欢34一群爱疯女人，一条心，一个目标，把枣儿红了舞出了不", "visible": true, "x": 2510, "y": 61, "w": 32, "h": 250, "attrs": {"class": "gf_raqC9"}}
+  {"text": "我的喜欢34一群爱疯女人，一条心，一个目标，把枣儿红了舞出了不一样的风采 #舞出", "visible": false, "x": 2526, "y": 73, "w": 296, "h": 0, "attrs": {"class": "_9ZG5oOj"}}
+  {"text": "我的喜欢34一群爱疯女人，一条心，一个目标，把枣儿红了舞出了不一样的风采 #舞出", "visible": true, "x": 2526, "y": 73, "w": 296, "h": 16, "attrs": {"class": "U8pIfXaJ"}}
+  {"text": "一群爱疯女人，一条心，一个目标，把枣儿红了舞出了不一样的风采 #舞出不一样的风采", "visible": true, "x": 2534, "y": 89, "w": 296, "h": 144, "attrs": {"class": "MenTUO1C"}}
+  {"text": "兄弟们,一口气看完一整部恐怖片《电锯惊魂10》 作为电锯惊魂系列里最具有情感内核", "visible": true, "x": 2541, "y": 89, "w": 94, "h": 129, "attrs": {"class": "xZ_Mr6gg PO041bRe"}}
+  {"text": "兄弟们,一口气看完一整部恐怖片《电锯惊魂10》 作为电锯惊魂系列里最具有情感内核", "visible": true, "x": 2541, "y": 222, "w": 94, "h": 20, "attrs": {"class": "Fge62D1H"}}
+  {"text": "我的作品0", "visible": true, "x": 2526, "y": 73, "w": 296, "h": 16, "attrs": {"class": "U8pIfXaJ"}}
+  {"text": "我的作品0", "visible": false, "x": 2534, "y": 81, "w": 296, "h": 0, "attrs": {"class": "RZuwF26I PzhCy9BP"}}
+  {"text": "我的作品", "visible": true, "x": 2538, "y": 70, "w": 56, "h": 22, "attrs": {"class": "Fge62D1H"}}
+  {"text": "红河文旅\n认证徽章\n红河哈尼族彝族自治州文化和旅游局官方抖音号\n关注\n324\n粉", "visible": true, "x": 160, "y": 56, "w": 2400, "h": 1193, "attrs": {"class": "FJW1IOm9"}}
+  {"text": "红河文旅\n认证徽章\n红河哈尼族彝族自治州文化和旅游局官方抖音号\n关注\n324\n粉", "visible": true, "x": 160, "y": 56, "w": 2400, "h": 1193, "attrs": {"class": "RAgzgd2D"}}
+  {"text": "红河文旅\n认证徽章\n红河哈尼族彝族自治州文化和旅游局官方抖音号\n关注\n324\n粉", "visible": true, "x": 160, "y": 56, "w": 2400, "h": 1193, "attrs": {"class": "page-cache-wrapper"}}
+  {"text": "红河文旅\n认证徽章\n红河哈尼族彝族自治州文化和旅游局官方抖音号\n关注\n324\n粉", "visible": true, "x": 160, "y": 0, "w": 2400, "h": 1249, "attrs": {"class": "parent-route-container d4NXPQgT route-scroll-container jZefMs6I"}}
+  {"text": "红河文旅\n认证徽章\n红河哈尼族彝族自治州文化和旅游局官方抖音号\n关注\n324\n粉", "visible": true, "x": 160, "y": 0, "w": 2400, "h": 3270, "attrs": {"class": "LSOoeXZS"}}
+  {"text": "红河文旅\n认证徽章\n红河哈尼族彝族自治州文化和旅游局官方抖音号\n关注\n324\n粉", "visible": true, "x": 160, "y": 0, "w": 2400, "h": 3270, "attrs": {"class": "jZD54Y3D"}}
+  {"text": "红河文旅\n认证徽章\n红河哈尼族彝族自治州文化和旅游局官方抖音号\n关注\n324\n粉", "visible": true, "x": 160, "y": 0, "w": 2400, "h": 3270, "attrs": {"class": "QXjpCPLw userNewUi"}}
+  {"text": "红河文旅\n认证徽章\n红河哈尼族彝族自治州文化和旅游局官方抖音号\n关注\n324\n粉", "visible": true, "x": 160, "y": 0, "w": 2400, "h": 3013, "attrs": {"data-e2e": "user-detail", "class": "QXjpCPLw", "id": "user_detail_element"}}
+  {"text": "红河文旅\n认证徽章\n红河哈尼族彝族自治州文化和旅游局官方抖音号\n关注\n324\n粉", "visible": true, "x": 160, "y": 0, "w": 2400, "h": 3013, "attrs": {"class": "x02b7nYS iNuOX3ka ZfKmVobg RAFtOaPH"}}
+  {"text": "红河文旅\n认证徽章\n红河哈尼族彝族自治州文化和旅游局官方抖音号\n关注\n324\n粉", "visible": true, "x": 160, "y": 239, "w": 2400, "h": 2774, "attrs": {"class": "LAXO9MqZ"}}
+  {"text": "红河文旅\n认证徽章\n红河哈尼族彝族自治州文化和旅游局官方抖音号\n关注\n324\n粉", "visible": true, "x": 160, "y": 239, "w": 2400, "h": 2774, "attrs": {"class": "QZd0lRPB"}}
+  {"text": "作品\n768\n推荐\n喜欢\n作品\n合集\n短剧\n搜索 Ta 的作品\n日期筛选\n置顶\n", "visible": true, "x": 160, "y": 220, "w": 2400, "h": 2793, "attrs": {"class": "kmCV0AYr"}}
+  {"text": "作品\n768\n推荐\n喜欢\n作品\n合集\n短剧\n搜索 Ta 的作品\n日期筛选\n置顶\n", "visible": true, "x": 600, "y": 220, "w": 1520, "h": 2793, "attrs": {"class": "YDT737JG RAFtOaPH"}}
+  {"text": "作品\n768\n推荐\n喜欢\n作品\n合集\n短剧\n搜索 Ta 的作品\n日期筛选\n置顶\n", "visible": true, "x": 600, "y": 220, "w": 1520, "h": 2793, "attrs": {}}
+  {"text": "作品\n768\n推荐\n喜欢", "visible": true, "x": 600, "y": 220, "w": 1520, "h": 58, "attrs": {}}
+  {"text": "作品\n768\n推荐\n喜欢", "visible": true, "x": 600, "y": 220, "w": 1520, "h": 58, "attrs": {"class": "TK2YSpN3", "id": "user-tabbar"}}
+  {"text": "作品\n768\n推荐\n喜欢", "visible": true, "x": 600, "y": 231, "w": 1520, "h": 36, "attrs": {"class": "Wn04N7vc"}}
+  {"text": "作品\n768\n推荐\n喜欢", "visible": true, "x": 600, "y": 221, "w": 220, "h": 56, "attrs": {"class": "gWlr8S5a semi-tabs semi-tabs-top"}}
+  {"text": "作品\n768\n推荐\n喜欢", "visible": true, "x": 600, "y": 221, "w": 220, "h": 56, "attrs": {"class": "semi-tabs-bar semi-tabs-bar-line semi-tabs-bar-top", "role": "tablist"}}
+  {"text": "作品\n768", "visible": true, "x": 600, "y": 221, "w": 74, "h": 53, "attrs": {"class": "semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs-tab-single semi-tabs-tab-active", "id": "semiTabpost", "role": "tab"}}
+  {"text": "作品\n768", "visible": true, "x": 600, "y": 233, "w": 74, "h": 26, "attrs": {"class": "z5bzCrMf JY8arcQE"}}
+  {"text": "作品\n768", "visible": true, "x": 600, "y": 233, "w": 74, "h": 26, "attrs": {"class": "nD6lCwNR"}}
+  {"text": "作品", "visible": true, "x": 600, "y": 233, "w": 36, "h": 26, "attrs": {"class": "cwXO7UuJ"}}
+  {"text": "作品\n合集\n短剧\n搜索 Ta 的作品\n日期筛选\n置顶\n3745\n\n红河《梯噜噜》", "visible": true, "x": 600, "y": 278, "w": 1520, "h": 2735, "attrs": {"class": "_FpZno9W RAFtOaPH"}}
+  {"text": "作品\n合集\n短剧\n搜索 Ta 的作品\n日期筛选\n置顶\n3745\n\n红河《梯噜噜》", "visible": true, "x": 600, "y": 278, "w": 1520, "h": 2735, "attrs": {"class": "BLr2iXUz"}}
+  {"text": "作品\n合集\n短剧\n搜索 Ta 的作品\n日期筛选", "visible": true, "x": 600, "y": 278, "w": 1520, "h": 44, "attrs": {}}
+  {"text": "作品\n合集\n短剧\n搜索 Ta 的作品\n日期筛选", "visible": true, "x": 600, "y": 278, "w": 1520, "h": 44, "attrs": {"class": "fXtIOLrX"}}
+  {"text": "作品\n合集\n短剧\n搜索 Ta 的作品\n日期筛选", "visible": true, "x": 600, "y": 278, "w": 1520, "h": 44, "attrs": {"class": "gpk1F4V1", "id": "user-tabbar-2"}}
+  {"text": "作品\n合集\n短剧", "visible": true, "x": 600, "y": 287, "w": 176, "h": 26, "attrs": {"class": "sx1LR0OO semi-tabs semi-tabs-top"}}
+  {"text": "作品\n合集\n短剧", "visible": true, "x": 600, "y": 287, "w": 176, "h": 26, "attrs": {"class": "semi-tabs-bar semi-tabs-bar-button semi-tabs-bar-top", "role": "tablist"}}
+  {"text": "作品", "visible": true, "x": 600, "y": 287, "w": 52, "h": 26, "attrs": {"class": "semi-tabs-tab semi-tabs-tab-button semi-tabs-tab-top semi-tabs-tab-single semi-tabs-tab-active", "id": "semiTabvideo", "role": "tab"}}
+  {"text": "作品", "visible": true, "x": 612, "y": 290, "w": 28, "h": 20, "attrs": {"class": "MyzBbnUC"}}
+  {"text": "作品", "visible": true, "x": 612, "y": 290, "w": 28, "h": 20, "attrs": {}}
+  {"text": "搜索 Ta 的作品\n日期筛选", "visible": true, "x": 1871, "y": 278, "w": 249, "h": 44, "attrs": {"class": "dlxtet7x"}}
+  {"text": "搜索 Ta 的作品", "visible": true, "x": 1871, "y": 282, "w": 138, "h": 36, "attrs": {"class": "lSerC07g Jtx8rYsk"}}
+  {"text": "搜索 Ta 的作品", "visible": true, "x": 1903, "y": 282, "w": 106, "h": 36, "attrs": {"class": "Disq5oac"}}
+  {"text": "搜索 Ta 的作品", "visible": true, "x": 1923, "y": 290, "w": 86, "h": 21, "attrs": {}}
+  {"text": "广告投放\n用户服务协议\n隐私政策\n账号找回\n联系我们\n加入我们\n友情链接\n站点地", "visible": true, "x": 160, "y": 3013, "w": 2400, "h": 256, "attrs": {"class": "IRvWiuKO"}}
+  {"text": "热门：抖音音乐抖音网页版韩朵饰品沟通。4️⃣0️⃣0️⃣-0️⃣3️⃣9️⃣6️", "visible": true, "x": 200, "y": 3166, "w": 2320, "h": 39, "attrs": {"class": "gsF4XxDR"}}
+  {"text": "东部战区发布海报", "visible": true, "x": 1258, "y": 3191, "w": 109, "h": 12, "attrs": {"class": "MrBvUpmZ"}}
+  {"text": "东部战区发布海报", "visible": true, "x": 1258, "y": 3188, "w": 96, "h": 17, "attrs": {"class": "RZuwF26I"}}
+  {"text": "发布视频/图文视频管理作品数据开直播直播数据创作者学习中心创作者中心剪映专业版A", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "semi-portal"}}
+  {"text": "发布视频/图文视频管理作品数据开直播直播数据创作者学习中心创作者中心剪映专业版A", "visible": false, "x": 2478, "y": 6, "w": 0, "h": 0, "attrs": {"class": "semi-portal-inner"}}
+  {"text": "发布视频/图文视频管理作品数据开直播直播数据创作者学习中心创作者中心剪映专业版A", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "ASuyzYQs semi-dropdown-wrapper semi-dropdown-wrapper-show semi-tooltip-animation-show", "id": "hwe4893", "role": "tooltip"}}
+  {"text": "发布视频/图文视频管理作品数据开直播直播数据创作者学习中心创作者中心剪映专业版A", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "semi-tooltip-content"}}
+  {"text": "发布视频/图文视频管理作品数据开直播直播数据创作者学习中心创作者中心剪映专业版A", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "semi-dropdown"}}
+  {"text": "发布视频/图文视频管理作品数据开直播直播数据创作者学习中心创作者中心剪映专业版A", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "semi-dropdown-content"}}
+  {"text": "发布视频/图文", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "semi-dropdown-item", "role": "menuitem"}}
+  {"text": "发布视频/图文", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "yMsROJf8"}}
+  {"text": "发布视频/图文", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "nWzliBl0 wux3ZF1b"}}
+  {"text": "发布视频/图文", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"data-e2e": "alink-item", "class": "RZuwF26I odw5gN_M"}}
+  {"text": "发布视频/图文", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "ei95eJfz"}}
+  {"text": "作品数据", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "semi-dropdown-item", "role": "menuitem"}}
+  {"text": "作品数据", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "yMsROJf8"}}
+  {"text": "作品数据", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "nWzliBl0 wux3ZF1b"}}
+  {"text": "作品数据", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"data-e2e": "alink-item", "class": "RZuwF26I odw5gN_M"}}
+  {"text": "作品数据", "visible": false, "x": 0, "y": 0, "w": 0, "h": 0, "attrs": {"class": "ei95eJfz"}}
+
+===== D. iframe 清单 =====
+frames count: 3
+  [0] https://www.douyin.com/user/MS4wLjABAAAAzV1wNMOd-askb-PxHj8I8lWfvXMgy8MFgLy3g7mLuiM?from_tab_name=main&showSubTab=video&
+  [1] https://lf-zt.douyin.com/obj/uc-assets/zt/@byted/x-storage-web/4.0.5/dist/latest/index.html
+  [2] https://lf-rc1.yhgfb-cn-static.com/obj/rc-verifycenter/rmc-nocaptcha/1.0.0.51/index.html
+
+===== E. select 元素 / 疑似下拉 =====
+  {"tag": "DIV", "role": null, "popup": "true", "label": "", "visible": false, "x": 2478, "y": 50}
+  {"tag": "DIV", "role": null, "popup": "true", "label": "", "visible": true, "x": 2084, "y": 79}
+  {"tag": "UL", "role": "menu", "popup": null, "label": "发布视频/图文视频管理作品数据开直播直播数据创作者学习中心创作者中心剪映专业版A", "visible": false, "x": 0, "y": 0}
+
+===== 完成 =====

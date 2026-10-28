@@ -1,0 +1,18 @@
+# 标注任务: 情绪 (视频层, 二分类) — Text Liveness / 情绪
+# 输入: 文案 + 纯口播文本(subtitles.text, 已剥离 SRT 时间戳标记)
+task_id: tl_llm_emotion
+name: 文本活人感·情绪
+level: video
+input_field: [caption, subtitles.text]
+labels:
+  0: 无
+  1: 有
+output_fields: [label, why]
+prompt_hint: |
+  判断文本是否包含**显性情绪表达**(喜悦/惊叹/感动/激动/心疼等)。
+  - 有情绪词或情绪符号: "太美了""绝美""震撼""感动""泪目""哈哈哈""爱了""幸福""感谢" 或大量感叹号/emoji = 1
+  - 只有客观陈述(时间/地点/活动介绍) = 0
+  - "欢迎来玩"这类礼貌用语不算情绪 = 0
+  - 单纯陈述"这里很美"算弱情绪 = 1; "美到窒息!!!" = 1
+  只依据给定文本判断, 不要脑补。
+max_input_chars: 1500

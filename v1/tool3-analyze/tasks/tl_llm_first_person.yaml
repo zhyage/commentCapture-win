@@ -1,0 +1,18 @@
+# 标注任务: 第一人称 (视频层, 二分类) — Text Liveness / HCI1 人格化
+# 输入: 文案 + 纯口播文本(subtitles.text, 已剥离 SRT 时间戳标记)
+task_id: tl_llm_first_person
+name: 文本活人感·第一人称
+level: video
+input_field: [caption, subtitles.text]
+labels:
+  0: 无
+  1: 有
+output_fields: [label, why]
+prompt_hint: |
+  判断该视频文案/口播是否用**第一人称自指**("我/我们/咱们/咱/俺/本人/自家"等)。
+  - 有"我/我们/咱们"等自指 = 1
+  - 只出现"红河文旅""本账号""景区"等第三方称谓 = 0
+  - 引用他人话语里的"我"(如引述游客原话) = 0, 并在 why 说明
+  - 只有疑问句"你知道我在哪吗"里的"我" = 1(仍是自指)
+  只依据给定文本判断, 不要脑补。
+max_input_chars: 1500

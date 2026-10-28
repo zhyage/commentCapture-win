@@ -1,0 +1,18 @@
+# 标注任务: 网络语言 (视频层, 二分类) — Text Liveness / 网络语言
+# 输入: 文案 + 纯口播文本(subtitles.text, 已剥离 SRT 时间戳标记)
+task_id: tl_llm_slang
+name: 文本活人感·网络语言
+level: video
+input_field: [caption, subtitles.text]
+labels:
+  0: 无
+  1: 有
+output_fields: [label, why]
+prompt_hint: |
+  判断文本是否使用**网络流行语**(平台语境里的"网感"词汇)。
+  - 例: "yyds""绝绝子""栓Q""emo""拿捏""破防""显眼包""搭子""特种兵旅游""泼天富贵""遥遥领先""蚌埠住了""天花板""松弛感"
+  - 只在文案里堆话题标签(#xxx)不算 = 0
+  - 用词是通用口语但已明显"上网化"(如"直接狠狠拿捏") = 1
+  - 过时网络词仍算网络语言 = 1
+  只依据给定文本判断, 不要脑补。
+max_input_chars: 1500

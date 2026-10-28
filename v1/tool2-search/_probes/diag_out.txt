@@ -1,0 +1,9 @@
+﻿>> 当前 URL: https://www.douyin.com/jingxuan/search/55008743593?aid=8b6df7b0-2295-4a1d-ad3e-068ff74156c1&type=general
+>> goto 首页 ...
+>> 首页 title: 抖音精选电脑版 - 抖音旗下优质视频平台
+>> 首页 URL: https://www.douyin.com/jingxuan
+>> input 数量: 1
+>> 回车后 URL: https://www.douyin.com/jingxuan/search/55008743593?aid=d55ed2f5-664e-4da6-a8db-5d81e1f5b05b&enter_from=discover&source=normal_search
+>> 回车后 title: 发现更多精彩视频 - 抖音搜索
+>> 含'用户'的可见元素: [{'tag': 'SPAN', 'text': '用户', 'cls': 'JIETkwow'}]
+>> 页面含登录/验证字样: False

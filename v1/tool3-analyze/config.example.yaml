@@ -1,0 +1,15 @@
+# 工具3 配置模板 (smanalyze)
+# 用法: 复制为 config.yaml 后填入自己的 key (config.yaml 已被 .gitignore 排除)
+deepseek:
+  api_key: ""            # 到 https://platform.deepseek.com 申请
+  model: deepseek-chat
+  base_url: https://api.deepseek.com
+
+label:
+  batch_size: 10        # 每批标注条数
+  max_workers: 5        # 并发线程数
+  max_retries: 2        # 单批失败重试次数
+  temperature: 0.1      # 低温度减少随机性
+  fail_rate_stop: 0.2   # 失败率超过此值 → 停止并报告
+  sample_n: 20          # 抽检样本条数
+  timeout_s: 120

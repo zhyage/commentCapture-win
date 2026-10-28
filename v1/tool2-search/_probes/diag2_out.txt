@@ -1,0 +1,27 @@
+﻿>> URL: https://www.douyin.com/jingxuan/search/55008743593?aid=5cafbf3f-0064-41aa-a880-c537ab9f824c&enter_from=discover&source=normal_search
+
+== role=tab 元素 ==
+   {'tag': 'DIV', 'text': '全部', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '公开课', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '影视', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '游戏', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '音乐', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '小剧场', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '美食', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '美妆穿搭', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '生活vlog', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '旅行', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '二次元', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '知识', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '亲子', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '动物', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '体育', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '三农', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+   {'tag': 'DIV', 'text': '汽车', 'cls': 'semi-tabs-tab semi-tabs-tab-line semi-tabs-tab-top semi-tabs', 'e2e': None, 'aria': None, 'visible': False, 'x': 0, 'y': 0}
+
+== 精确文本'用户'的叶子元素及其父节点 ==
+
+== 尝试点击 '用户' tab (精确文本+最近tabbar) ==
+  点击结果: {'ok': False}
+  点击后 URL: https://www.douyin.com/jingxuan/search/55008743593?aid=5cafbf3f-0064-41aa-a880-c537ab9f824c&enter_from=discover&source=normal_search
+  卡片: []

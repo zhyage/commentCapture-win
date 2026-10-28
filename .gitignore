@@ -1,0 +1,53 @@
+# ============================================================
+# 抖音数据采集工程 .gitignore
+# 原则: 凭据/登录态/原始数据/环境缓存 一律不入库
+# ============================================================
+
+# ---- 凭据与登录态 (泄露=账号被接管, 绝不入库) ----
+.profile/
+.notify_config.json
+**/config.yaml
+**/config-test.yaml
+!**/config.example.yaml
+*.key
+*.pem
+.git-credentials
+
+# ---- Python 环境与依赖缓存 ----
+.venv/
+.cache/
+.tmp-pip/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ---- 采集到的原始数据 (底片: 单独备份, 不走 Git) ----
+v1/tool1-collect/data/
+v1/tool1-collect/data-2000/
+output/
+*.mp4
+*.srt
+
+# ---- 第三方文献 (版权原因不入库) ----
+referencePapers/
+
+# ---- 采集/分析的一次性产出与本地状态 ----
+*.log
+*.xlsx
+monitor_state.json
+_strategy3_preview/
+_subtitle_diff_report.json
+
+# ---- 开发期临时脚本 (_ 前缀约定为 scratch) ----
+v1/tool1-collect/_*.py
+v1/tool1-collect/debug_yunet.py
+
+# ---- 工具2 的运行产出 (搜索结果/预检清单, 属采集数据而非代码) ----
+v1/tool2-search/archive.*
+v1/tool2-search/precheck_result*.json
+v1/tool2-search/urls*.txt
+v1/tool2-search/accounts.stage1.txt
+v1/tool2-search/accounts.retry.txt
+v1/tool2-search/_probes/*.png

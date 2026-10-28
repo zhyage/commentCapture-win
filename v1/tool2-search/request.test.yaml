@@ -1,0 +1,29 @@
+# ============================================================
+# request.test.yaml — 搜索过滤测试配置 (工具2)
+# 请按需修改下面的值; 运行: smsearch request.test.yaml
+# 当前值为示例, 可直接跑通, 也可修改后测试不同条件
+# ============================================================
+
+# 搜索词 (必填; 多词 = 或, 合并去重)
+keywords:
+  - 红河文旅
+
+# 发布时间范围 (YYYY-MM-DD, null=不限)
+after: null
+before: null
+
+# 互动数下限 (null=不限)
+min_likes: 1000
+min_comments: null
+
+# 限定发布账号 (null=不限)
+authors: 红河文旅
+
+# 排序: likes(按点赞) | latest(最新) | comprehensive(综合)
+sort: likes
+
+# 结果条数上限 (过滤后)
+limit: 50
+
+# 软条件 (可选, v0仅关键词增强)
+describe: 景点介绍, 景点推荐, 民俗
